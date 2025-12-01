@@ -1,16 +1,16 @@
 #!/bin/bash
 
 # Create a demo repository
-mkdir git-demo && cd git-demo
-git init
-git checkout -b main
+#mkdir git-demo && cd git-demo
+#git init
+#git checkout -b main
 
 # Create initial file
 echo "Line 1: Original content" > demo.txt
 echo "Line 2: Original content" >> demo.txt
 echo "Line 3: Original content" >> demo.txt
 git add demo.txt
-git commit -m "Initial commit"
+git commit -m "feat: add demo.txt for conflict demo"
 
 # Create branch A
 git checkout -b feature-a
@@ -18,7 +18,7 @@ echo "Line 1: Changed by Feature A" > demo.txt
 echo "Line 2: Original content" >> demo.txt
 echo "Line 3: Changed by Feature A" >> demo.txt
 git add demo.txt
-git commit -m "Feature A changes"
+git commit -m "feat: Feature A changes"
 
 # Go back and create branch B from main
 git checkout main
@@ -27,7 +27,7 @@ echo "Line 1: Changed by Feature B" > demo.txt
 echo "Line 2: Original content" >> demo.txt
 echo "Line 3: Changed by Feature B" >> demo.txt
 git add demo.txt
-git commit -m "Feature B changes"
+git commit -m "feat: Feature B changes"
 
 # Merge feature-a into main first
 git checkout main
